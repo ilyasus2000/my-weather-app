@@ -1,5 +1,35 @@
 body {
-  background-color: #222;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #1a1a1a;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+body::before {
+  background: #8ed2cc;
+  top: -100px;
+  left: -100px;
+}
+
+body::after {
+  background: #dab7db;
+  bottom: -100px;
+  right: -100px;
 }
 
 .card {
@@ -11,6 +41,8 @@ body {
   border-radius: 20px;
   padding: 40px 35px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .search {
@@ -78,7 +110,8 @@ body {
   margin-right: 10px;
 }
 
-.humidity, .wind {
+.humidity,
+.wind {
   font-size: 28px;
   margin-top: -6px;
 }
